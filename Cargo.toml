@@ -1,0 +1,19 @@
+[package]
+name = "marketplace-api"
+version = "0.1.0"
+edition = "2021"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix = "0.13.3"
+actix-web = "4.5.1"
+chrono = { version = "0.4.38", features = ["serde"]}
+dotenv = "0.15.0"
+serde = {version = "1.0.198", features = ["derive"]}
+serde_json = "1.0.116"
+env_logger = "0.11.3"
+#sqlx={version = "0.7.4", features =["runtime-async-native-lts", "mssql", "chrono", "uuid"]}
+#sqlx = { version = "0.7", features = [ "runtime-async-std", "tls-native-tls" , "postgres", "chrono", "uuid"] }
+sqlx = { version = "0.7.4", features = ["runtime-tokio-native-tls", "mysql","macros", "chrono", "uuid"] }
+#sqlx-core = { version = "0.7.4", features = ["mssql"] }
+uuid = { version = "1.8.0", features = ["serde","v4"] }
